@@ -1,0 +1,201 @@
+/* Created and marked up by Zak Wegweiser (zwegweis) */
+
+/* Remove margins from html, and give entire page a background color */
+html {
+	margin: 0;
+	padding: 10px;
+	background-color: #e2d4cf;
+}
+
+/* Set a smaller font-size, larger line-height, serif font-family, and Brown color scheme */
+body {
+	font-size: 0.85em;
+	line-height: 1.6;
+	font-family: "Times", "Times New Roman", Verdana, serif;
+	color: #222222; 
+	background-color: #e2d4cf;
+
+	margin-navigation: auto;
+	margin-right: auto;
+}
+
+/* Set up h1-h5 */
+h1, h2, h3, h4, h5 {
+	margin-top: 0;
+	margin-bottom: 2rem;
+	font-weight: 300; 
+}
+h1 { font-size: 3.6em; line-height: 1.2;}
+h2 { font-size: 3.0em; line-height: 1.25;}
+h3 { font-size: 2.4em; line-height: 1.3;}
+h4 { font-size: 1.8em; line-height: 1.35;}
+h5 { font-size: 1.5em; line-height: 1.5; }
+
+/* Remove top margin from p tag, mostly applied to paragraph above panel */
+p {
+	margin-top: 0; 
+}
+
+/* Have images dynamically resize to their container width (maintaining aspect ratio) */
+img {
+	max-width:100%;
+}
+
+/* Set red-like color for <a> and remove underline */
+a {
+	color: #970108;
+	text-decoration: none;
+}
+
+/* Set blue-like color for hovering over links */
+a:hover {
+	color: #1EAEDB;
+}
+
+
+/* IF SCREEN WIDTH IS 600PX OR LARGER
+   THIS IS MAINLY DESKTOPS OR LANDSCAPE ORIENTATION */
+@media (min-width: 600px) {
+
+	/* Use Grid to set up the container
+	   Create three columns, nav, gap, content. 
+	   Name grid areas accordingly */
+	.container {
+		display: grid;
+		grid-template-columns: 15% 5% 80%;
+		grid-template-rows: auto;
+		grid-template-areas: 
+		"header header header"
+		"sidebar . main"
+		"footer footer footer";
+	}
+
+	/* Use flexbox to dynamically resize meal panels */
+	.block  {
+		display: flex;
+		/*align-items: flex-start;*/
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	
+	/* Dynamically resize and set a bottom margin for spacing */
+	.block div {
+		width: 40%;
+		margin-bottom: 20px;
+	}
+	
+	/* Use grid to place navigation and flexbox to position elements */
+	.navigation {
+		grid-area: sidebar;
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	/* Maintain each navigation item as a list item with flexbox */
+	.navigation li {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		font-size: 1.2em;
+	}
+	
+	/* Profile img should scale to its container size */
+	.navigation img {
+		max-width: 100%;
+	}
+} /* End of media over 600px */
+
+
+/* SET DEFAULTS */
+
+/* Use grid to dynamically place header and flexbox to control the elements in the header*/
+.header {
+	grid-area: header;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin-bottom: 60px;
+	padding: 2em 0 0 240px;
+	background-color: #4d2616;
+	color: #794630;
+}
+
+/* Place logo at an absolute position */
+.header img{
+	position: absolute;
+	display: inline-block;
+	top: 25px;
+	left: 25px;
+}
+
+/* On screens smaller than 600px, dynamically adjust navigation div */
+.navigation {
+	grid-area: sidebar;
+	display: flex;
+	justify-content: center;
+}
+
+/* Nav image should have border that changes with hover */
+.navigation img {
+	border: 2px solid black;
+	border-radius: 50%;
+	
+	max-width: 100%;
+}
+.navigation img:hover {
+	border: 2px solid white;
+}
+
+/* On screens smaller than 600px, dynamically adjust navigation list items */
+.navigation li {
+	list-style: none;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-size: 1.75em;
+
+	margin-bottom: 8px;
+}
+
+/* Use grid to place content that is dynamic */
+.content {
+	grid-area: main;
+}
+
+/* Use grid and flexbox to display a dynamic footer at the bottom of the page */
+.footer {
+	grid-area: footer;
+	background-color: #4d2616;
+	color: #794630;
+	padding: 10px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Set basic defaults for meal panels */
+.block  {
+	list-style: none;
+	margin: 1em 1em 1em 1em;
+	padding: 0;
+}
+
+.block div {
+	background-color: #e5e5e5;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 20px;
+
+	text-align: center;
+}
+
+/* Give a hover style, as if the panels were links */
+.block div:hover{
+	background-color: #795a4f;
+}
+
+/* Project for CS1300 by zwegweis */
