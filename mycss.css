@@ -55,7 +55,7 @@ a:hover {
 
 /* IF SCREEN WIDTH IS 600PX OR LARGER
    THIS IS MAINLY DESKTOPS OR LANDSCAPE ORIENTATION */
-@media screen, (min-width: 600px) {
+@media (min-width: 600px) {
 
 	/* Use Grid to set up the container
 	   Create three columns, nav, gap, content. 
@@ -119,6 +119,7 @@ a:hover {
 	padding: 2em 0 0 240px;
 	background-color: #4d2616;
 	color: #794630;
+	font-size: 3.2em;
 }
 
 /* Place logo at an absolute position */
