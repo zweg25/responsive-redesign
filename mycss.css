@@ -57,7 +57,12 @@ a:hover {
    THIS IS MAINLY DESKTOPS OR LANDSCAPE ORIENTATION */
 @media (min-width: 600px) {
 
-	/* Use Grid to set up the container
+	/* Increase header font on larger screens */
+   .header {
+	font-size: 0.85em;
+   }
+
+   /* Use Grid to set up the container
 	   Create three columns, nav, gap, content. 
 	   Name grid areas accordingly */
 	.container {
@@ -119,7 +124,7 @@ a:hover {
 	padding: 2em 0 0 240px;
 	background-color: #4d2616;
 	color: #794630;
-	font-size: 3.2em;
+	font-size: 0.75em;
 }
 
 /* Place logo at an absolute position */
@@ -135,6 +140,7 @@ a:hover {
 	grid-area: sidebar;
 	display: flex;
 	justify-content: center;
+	padding-right: 10px;
 }
 
 /* Nav image should have border that changes with hover */
