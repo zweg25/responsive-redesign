@@ -53,6 +53,59 @@ a:hover {
 }
 
 
+/* IF SCREEN WIDTH IS 600PX OR LARGER
+   THIS IS MAINLY DESKTOPS OR LANDSCAPE ORIENTATION */
+@media (min-width: 600px) {
+
+	/* Use Grid to set up the container
+	   Create three columns, nav, gap, content. 
+	   Name grid areas accordingly */
+	.container {
+		display: grid;
+		grid-template-columns: 15% 5% 80%;
+		grid-template-rows: auto;
+		grid-template-areas: 
+		"header header header"
+		"sidebar . main"
+		"footer footer footer";
+	}
+
+	/* Use flexbox to dynamically resize meal panels */
+	.block  {
+		display: flex;
+		/*align-items: flex-start;*/
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	
+	/* Dynamically resize and set a bottom margin for spacing */
+	.block div {
+		width: 40%;
+		margin-bottom: 20px;
+	}
+	
+	/* Use grid to place navigation and flexbox to position elements */
+	.navigation {
+		grid-area: sidebar;
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	/* Maintain each navigation item as a list item with flexbox */
+	.navigation li {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		font-size: 1.2em;
+	}
+	
+	/* Profile img should scale to its container size */
+	.navigation img {
+		max-width: 100%;
+	}
+} /* End of media over 600px */
+
+
 /* SET DEFAULTS */
 
 /* Use grid to dynamically place header and flexbox to control the elements in the header*/
@@ -145,58 +198,5 @@ a:hover {
 .block div:hover{
 	background-color: #795a4f;
 }
-
-
-/* IF SCREEN WIDTH IS 600PX OR LARGER
-   THIS IS MAINLY DESKTOPS OR LANDSCAPE ORIENTATION */
-@media (min-width: 600px) {
-
-	/* Use Grid to set up the container
-	   Create three columns, nav, gap, content. 
-	   Name grid areas accordingly */
-	.container {
-		display: grid;
-		grid-template-columns: 15% 5% 80%;
-		grid-template-rows: auto;
-		grid-template-areas: 
-		"header header header"
-		"sidebar . main"
-		"footer footer footer";
-	}
-
-	/* Use flexbox to dynamically resize meal panels */
-	.block  {
-		display: flex;
-		/*align-items: flex-start;*/
-		justify-content: space-around;
-		flex-wrap: wrap;
-	}
-	
-	/* Dynamically resize and set a bottom margin for spacing */
-	.block div {
-		width: 40%;
-		margin-bottom: 20px;
-	}
-	
-	/* Use grid to place navigation and flexbox to position elements */
-	.navigation {
-		grid-area: sidebar;
-		display: flex;
-		justify-content: flex-start;
-	}
-
-	/* Maintain each navigation item as a list item with flexbox */
-	.navigation li {
-		display: flex;
-		justify-content: center;
-		align-items: flex-start;
-		font-size: 1.2em;
-	}
-	
-	/* Profile img should scale to its container size */
-	.navigation img {
-		max-width: 100%;
-	}
-} /* End of media over 600px */
 
 /* Project for CS1300 by zwegweis */
