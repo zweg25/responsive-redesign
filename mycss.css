@@ -58,8 +58,8 @@ a:hover {
 @media (min-width: 600px) {
 
 	/* Increase header font on larger screens */
-   .header {
-	font-size: 0.85em;
+   .header h1{
+	font-size: 3.6em;
    }
 
    /* Use Grid to set up the container
@@ -124,7 +124,12 @@ a:hover {
 	padding: 2em 0 0 240px;
 	background-color: #4d2616;
 	color: #794630;
-	font-size: 0.75em;
+}
+
+/* On smaller screens, reduce header size and slightly move left to fit */
+.header h1 {
+	font-size: 3.0em;
+	margin-left: -14px;
 }
 
 /* Place logo at an absolute position */
@@ -140,7 +145,7 @@ a:hover {
 	grid-area: sidebar;
 	display: flex;
 	justify-content: center;
-	padding-right: 10px;
+	margin-left: -20px;
 }
 
 /* Nav image should have border that changes with hover */
