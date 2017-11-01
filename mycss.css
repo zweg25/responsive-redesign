@@ -127,9 +127,11 @@ a:hover {
 }
 
 /* On smaller screens, reduce header size and slightly move left to fit */
-.header h1 {
-	font-size: 3.0em;
-	margin-left: -14px;
+@media (max-width: 400px) {
+	.header h1 {
+		font-size: 2.4em;
+		margin-left: -14px;
+	}
 }
 
 /* Place logo at an absolute position */
